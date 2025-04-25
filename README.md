@@ -156,7 +156,7 @@ pip install -r requirements.txt
 
 # Questions 
 
-* What does the model you have implemented do and when should it be used?
+1) What does the model you have implemented do and when should it be used?
 
 - This project implements a Gradient Boosting Tree Classifier from first principles, based on Sections 10.9–10.10 of The Elements of Statistical Learning. The model builds an ensemble of simple decision stumps (trees with depth = 1), where each new stump corrects the errors made by the previous ones. It does this by fitting to the negative gradient of the loss function, which in this case is the log-loss used for binary classification. Each round fits a new weak learner to correct the residuals (gradient) of the current ensemble’s prediction using log-loss optimization.
 
@@ -171,7 +171,7 @@ We are exploring ensemble methods for classification from first principles
 We want to analyze interpretability and overfitting control mechanisms like early stopping
 
 
-* How did you test your model to determine if it is working reasonably correctly?
+2) How did you test your model to determine if it is working reasonably correctly?
 
 - We generated a synthetic binary classification dataset (generated_data.csv) with two separable clusters.
 
@@ -194,7 +194,7 @@ Synthetic dataset generation ensures controlled testing scenarios
 Early stopping logs are printed if the model detects no improvement over several rounds.
 
 
-* What parameters have you exposed to users of your implementation in order to tune performance? (Also perhaps provide some basic usage examples.)
+3) What parameters have you exposed to users of your implementation in order to tune performance? (Also perhaps provide some basic usage examples.)
 
 - The following parameters can be passed when creating a BoostingTree classifier:
 
@@ -215,7 +215,7 @@ early_stopping_rounds: if specified, stops training after N rounds with no accur
   predictions = model.predict(X)
 
 
-* Are there specific inputs that your implementation has trouble with? Given more time, could you work around these or is it fundamental?
+4) Are there specific inputs that your implementation has trouble with? Given more time, could you work around these or is it fundamental?
 
 - Limitations:
 
